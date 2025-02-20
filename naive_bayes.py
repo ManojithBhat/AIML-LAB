@@ -47,3 +47,4 @@ user_input = np.array([[sepal_len, sepal_width, petal_len, petal_width]])
 
 pred = nb.predict(user_input)
 print(pred)
+

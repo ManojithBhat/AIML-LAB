@@ -18,16 +18,16 @@ def knn_predict(train_data, train_labels, test_point, k=3):
 
     for i in range(len(train_data)):
         distance = euclidean_distance(test_point, train_data[i])
-        distances.append((distance, train_labels[i]))
+        distances.append((distance, train_labels[i])) 
 
-    sorted_distances = sorted(distances, key=lambda x: x[0])
-    k_nearest_neighbors = sorted_distances[:k]
+    sorted(distances, key=lambda x: x[0])
+    k_nearest_neighbors = distances[:k]
 
     class_counts = {}
     for neighbor in k_nearest_neighbors:
         label = neighbor[1]
         class_counts[label] = class_counts.get(label, 0) + 1
-    predicted_class = max(class_counts, key=class_counts.get)
+    predicted_class = max(class_counts, key=class_counts.get)                           
     return predicted_class
 
 
@@ -56,3 +56,4 @@ iris_species = {
 }
 
 predicted_species = iris_species.get(prediction, "Unknown")
+

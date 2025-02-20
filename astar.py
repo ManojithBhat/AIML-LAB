@@ -34,7 +34,6 @@ def calculate_heuristic(state, goal_state):
         if state[i][j] != goal_state[i][j] and state[i][j] != 0
     )
 
-
 def a_star(initial_state, goal_state):
     OPEN = [(calculate_heuristic(initial_state, goal_state), 0, initial_state, 0)] #(h,t,initial_state,iteration)
     CLOSED = set()
